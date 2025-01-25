@@ -18,18 +18,22 @@ async function connectDB() {
     console.error("❌ Connection error:", err);
   }
 }
+bot.onText(/\/sosal/, (msq) => {
+  const chatId = msq.chat.id;
+  bot.sendMessage(chatId, "Yes");
+});
 setInterval(
   async () => {
     const chats = await Chat.find();
     chats.forEach(async (element) => {
-      console.log(
-        new Date(element.timeSendGlobalCall).getTime() + 60 * 60 * 1000,
-      );
+      console.log(new Date(element.timeSendGlobalCall).getTime() + 60 * 1000);
       const nowTime = new Date();
 
       if (
         nowTime >=
-        new Date(element.timeSendGlobalCall).getTime() + 60 * 60 * 1000
+        new Date(element.timeSendGlobalCall).getTime() +
+          60 * 60 * 1000 +
+          30 * 60 * 1000
       ) {
         await bot.sendMessage(element.chatId, "time to meet");
 
@@ -38,7 +42,7 @@ setInterval(
       }
     });
   },
-  60 * 60 * 1000,
+  5 * 60 * 1000,
 );
 async function start() {
   await connectDB();
