@@ -1,0 +1,26 @@
+{
+  "name": "message-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talafarael/message-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talafarael/message-bot/issues"
+  },
+  "homepage": "https://github.com/talafarael/message-bot#readme",
+  "description": "",
+  "dependencies": {
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.5",
+    "node-telegram-bot-api": "^0.66.0",
+    "nodemon": "^3.1.9"
+  }
+}
